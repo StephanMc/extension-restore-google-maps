@@ -58,5 +58,10 @@
     "16": "images/icon16.png",
     "48": "images/icon48.png",
     "128": "images/icon128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "restoreGoogleMaps@stephanmc.com"
+    }
   }
 }
