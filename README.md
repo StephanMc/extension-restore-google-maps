@@ -10,4 +10,7 @@ Technically, this extension changes the search region to being in Switzerland (a
 
 Once this extension is installed, the Maps button reappears in your Google search results, allowing you to access Maps with just one click. Whether you're planning your daily commute or exploring new destinations, this extension makes navigation faster and more convenient, without any complications or detours.
 
-This extension has been designed to be as simple and unobtrusive as possible. There are no complex configurations or options to adjust; simply install it and see the Maps button reappear. Our goal is to make your online search experience more efficient and provide you with the tools to easily navigate the world, despite regulatory changes.
+
+## Preview
+
+![image](https://github.com/StephanMc/extension-restore-google-maps/assets/5366972/f3998dd5-01f7-45c6-9596-63fcff390d5b)
