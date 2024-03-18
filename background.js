@@ -9,7 +9,11 @@ function isGoogleSearchUrl(url) {
 
 chrome.webNavigation.onBeforeNavigate.addListener(
   function (details) {
-    if (isGoogleSearchUrl(details.url) && !details.url.includes("gl=ch")) {
+    const isDocumentLoaded =
+      details.documentLifecycle === undefined /* Firefox, since not using Service worker */ ||
+      details.documentLifecycle === "active";
+
+    if (isDocumentLoaded && isGoogleSearchUrl(details.url) && !details.url.includes("gl=ch")) {
       const url = new URL(details.url);
       url.searchParams.set("gl", "ch");
 
