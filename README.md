@@ -1,3 +1,5 @@
+# Restore Google Maps on Search
+
 This extension provides a simple and effective solution for those who have noticed the disappearance of the Maps button in Google search results.
 
 This change stems from European legislation aimed at limiting the promotion of Google's own products within the European Union, in order to maintain fair competition among various services. As a result, the direct and convenient access to maps and routes from the search page was lost for many users.
