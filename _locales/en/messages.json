@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Restore Google Maps on Search",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Bring back the Maps feature into Google Search for a fast and convenient navigation.",
+    "description": "Extension description"
+  }
+}

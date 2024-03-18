@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Restore Google Maps on Search",
-  "description": "Bring back the Maps feature into Google Search for a fast and convenient navigation.",
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
   "version": "1.0",
   "host_permissions": ["https://www.google.ad/search*",
   "https://www.google.at/search*",
@@ -49,6 +49,7 @@
   "https://www.google.sk/search*",
   "https://www.google.sm/search*"],
   "permissions": ["webNavigation", "tabs"],
+  "default_locale": "en",
   "background": {
     "service_worker": "background.js",
     "scripts": ["background.js"]

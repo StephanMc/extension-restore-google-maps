@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "Restaurez Google Maps dans la recherche",
+    "description": "Extension name"
+  },
+  "extensionDescription": {
+    "message": "Retrouvez de nouveau la fonctionnalité Google Maps dans la recherche Google, pour une navigation rapide et pratique.",
+    "description": "Extension description"
+  }
+}
