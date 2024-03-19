@@ -11,7 +11,7 @@ chrome.webNavigation.onBeforeNavigate.addListener(
   function (details) {
     const isDocumentLoaded =
       details.documentLifecycle === undefined /* Firefox, since not using Service worker */ ||
-      details.documentLifecycle === "active";
+      details.documentLifecycle === "active"  /* Chromium */;
 
     if (isDocumentLoaded && isGoogleSearchUrl(details.url) && !details.url.includes("gl=ch")) {
       const url = new URL(details.url);
