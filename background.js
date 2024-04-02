@@ -3,18 +3,19 @@
  * stephan.kouadio@gmail.com
  *
  */
-function isGoogleSearchUrl(url) {
-  return /^https?:\/\/(?:www\.)?google\.\w+\/search/.test(url);
+function isGoogleSearchUrl(urlObject) {
+  return urlObject.origin.startsWith("https://www.google.") && urlObject.pathname === "/search";
 }
 
 chrome.webNavigation.onBeforeNavigate.addListener(
   function (details) {
     const isDocumentLoaded =
       details.documentLifecycle === undefined /* Firefox, since not using Service worker */ ||
-      details.documentLifecycle === "active"  /* Chromium */;
+      details.documentLifecycle === "active"; /* Chromium */
 
-    if (isDocumentLoaded && isGoogleSearchUrl(details.url) && !details.url.includes("gl=ch")) {
-      const url = new URL(details.url);
+    const url = new URL(details.url);
+
+    if (isDocumentLoaded && isGoogleSearchUrl(url) && !url.search.includes("gl=ch")) {
       url.searchParams.set("gl", "ch");
 
       chrome.tabs.update(details.tabId, { url: url.toString() }, function () {});
