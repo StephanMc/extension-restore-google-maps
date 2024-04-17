@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "host_permissions": [
     "https://www.google.ad/search*",
     "https://www.google.at/search*",
@@ -48,8 +48,7 @@
     "https://www.google.se/search*",
     "https://www.google.si/search*",
     "https://www.google.sk/search*",
-    "https://www.google.sm/search*",
-    "https://www.google.com/travel/flights*"
+    "https://www.google.sm/search*"
   ],
   "permissions": ["webNavigation"],
   "default_locale": "en",

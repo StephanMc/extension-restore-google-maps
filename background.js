@@ -19,15 +19,8 @@ chrome.webNavigation.onBeforeNavigate.addListener(
 
     const url = new URL(details.url);
 
-    if (isDocumentLoaded && isGoogleSearchUrl(url) && !url.search.includes("gl=ch")) {
-      url.searchParams.set("gl", "ch");
-
-      chrome.tabs.update(details.tabId, { url: url.toString() }, function () {});
-    } else if (isDocumentLoaded && isGoogleFlightUrl(url) && url.search.toLowerCase().includes("gl=ch")) {
-      // When searching "Google Flights" on search, it appended by default "GL=ch" on flight results, making prices to appear in CHF.
-      // Fix it by removing the parameter, to use the default currency.
-      url.searchParams.delete("gl");
-      url.searchParams.delete("GL");
+    if (isDocumentLoaded && isGoogleSearchUrl(url) && !url.search.includes("gl=ad")) {
+      url.searchParams.set("gl", "ad");
 
       chrome.tabs.update(details.tabId, { url: url.toString() }, function () {});
     }
