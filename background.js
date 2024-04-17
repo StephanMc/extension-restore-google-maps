@@ -18,11 +18,19 @@ chrome.webNavigation.onBeforeNavigate.addListener(
       details.documentLifecycle === "active"; /* Chromium */
 
     const url = new URL(details.url);
+    const tbm = url.searchParams.get("tbm");
 
-    if (isDocumentLoaded && isGoogleSearchUrl(url) && !url.search.includes("gl=ad")) {
-      url.searchParams.set("gl", "ad");
+    const isShopTab = (tbm === "shop");
 
-      chrome.tabs.update(details.tabId, { url: url.toString() }, function () {});
+    if (isDocumentLoaded && isGoogleSearchUrl(url)) {
+      if (!isShopTab && !url.search.includes("gl=ad")) {
+        url.searchParams.set("gl", "ad");
+
+        chrome.tabs.update(details.tabId, { url: url.toString() }, function () {});
+      } else if (isShopTab && url.search.includes("gl=ad")) {
+        url.searchParams.delete("gl");
+        chrome.tabs.update(details.tabId, { url: url.toString() }, function () {});
+      }
     }
   },
   { url: [{ urlMatches: "https://www.google." }] }
