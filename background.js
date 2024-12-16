@@ -4,7 +4,9 @@
  *
  */
 function isGoogleSearchUrl(urlObject) {
-  return urlObject.origin.startsWith("https://www.google.") && urlObject.pathname === "/search";
+  // We consider a valid/classic Google Search URL as not having the "ibp" parameter, which is used for Instant Search
+  return urlObject.origin.startsWith("https://www.google.") && urlObject.pathname === "/search" &&
+    !urlObject.searchParams.get("ibp");
 }
 
 function isGoogleFlightUrl(urlObject) {
